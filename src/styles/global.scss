@@ -232,14 +232,15 @@ body {
   }
 
   &__nav {
-    display: none;
+    position: fixed;
+    transform: translateX(100vw);
+    transition: transform 0.3s ease;
 
     @media (min-width: 48rem) {
-      display: block;
+      position: relative;
+      transform: translateX(0);
     }
-
-    &--active {
-      display: block;
+    @media (max-width: 47.975rem) {
       position: fixed;
       top: 0;
       right: 0;
@@ -248,7 +249,11 @@ body {
       background-color: $color-neutral-off-white;
       padding: 8rem 2rem 2rem;
       z-index: 100;
+    }
+
+    &--active {
       box-shadow: 0 0 0 100vw rgba(0, 0, 0, 0.5);
+      transform: translateX(0);
     }
   }
 
