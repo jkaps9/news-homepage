@@ -1,0 +1,279 @@
+@use "variables" as *;
+
+/* Base Reset */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+body,
+h1,
+h2,
+h3,
+p {
+  margin: 0;
+}
+img,
+picture {
+  max-width: 100%;
+  display: block;
+}
+a {
+  text-decoration: none;
+  color: inherit;
+}
+ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+body {
+  font-family: "Inter", sans-serif;
+  font-size: 15px;
+  background-color: $color-neutral-off-white;
+  color: $color-neutral-dark-grayish-blue;
+  line-height: 1.5;
+}
+
+.container {
+  width: 100%;
+  max-width: 70rem;
+  margin-inline: auto;
+  padding: 1.5rem 1rem;
+
+  @media (min-width: 64rem) {
+    padding-top: 3.5rem;
+  }
+}
+
+/* Grid Layout */
+.main-grid {
+  display: grid;
+  gap: 4rem;
+  margin-top: 2rem;
+
+  @media (min-width: 64rem) {
+    grid-template-columns: repeat(3, 1fr);
+    gap: 2rem;
+    margin-top: 3rem;
+  }
+}
+
+/* Hero Component */
+.hero {
+  display: grid;
+  gap: 1.5rem;
+
+  @media (min-width: 64rem) {
+    grid-column: span 2;
+  }
+
+  &__picture {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+
+  &__body {
+    display: grid;
+    gap: 1rem;
+
+    @media (min-width: 48rem) {
+      grid-template-columns: 1fr 1fr;
+      gap: 2rem;
+    }
+  }
+
+  &__title {
+    color: $color-neutral-very-dark-blue;
+    font-size: 2.5rem;
+    font-weight: 800;
+    line-height: 1;
+
+    @media (min-width: 64rem) {
+      font-size: 3.5rem;
+    }
+  }
+
+  &__content {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 1.5rem;
+  }
+
+  &__button {
+    background-color: $color-primary-red;
+    color: $color-neutral-off-white;
+    text-transform: uppercase;
+    font-weight: 700;
+    letter-spacing: 0.2rem;
+    padding: 1rem 2.5rem;
+
+    &:hover,
+    &:focus {
+      background-color: $color-neutral-very-dark-blue;
+    }
+  }
+}
+
+/* New Articles Aside */
+.new-articles {
+  background-color: $color-neutral-very-dark-blue;
+  padding: 1.5rem;
+
+  @media (min-width: 64rem) {
+    padding: 2rem;
+  }
+
+  &__heading {
+    color: $color-primary-orange;
+    font-size: 2rem;
+    margin-bottom: 1.5rem;
+  }
+
+  &__list {
+    display: grid;
+    gap: 2rem;
+  }
+
+  &__item {
+    border-bottom: 1px solid $color-neutral-dark-grayish-blue;
+    padding-bottom: 2rem;
+
+    &:last-child {
+      border-bottom: none;
+      padding-bottom: 0;
+    }
+  }
+
+  &__title {
+    color: $color-neutral-off-white;
+    font-size: 1.25rem;
+    margin-bottom: 0.5rem;
+
+    a:hover,
+    a:focus {
+      color: $color-primary-orange;
+    }
+  }
+
+  &__text {
+    color: $color-neutral-grayish-blue;
+  }
+}
+
+/* Top Articles Grid */
+.top-articles {
+  display: grid;
+  gap: 2rem;
+
+  @media (min-width: 64rem) {
+    grid-column: span 3;
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+.top-article {
+  display: flex;
+  gap: 1.5rem;
+
+  &__image {
+    width: 100px;
+    object-fit: cover;
+  }
+
+  &__body {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+  }
+
+  &__number {
+    color: $color-neutral-grayish-blue;
+    font-size: 2rem;
+    font-weight: 700;
+    line-height: 1;
+  }
+
+  &__title {
+    color: $color-neutral-very-dark-blue;
+    font-size: 1.125rem;
+    font-weight: 800;
+
+    a:hover,
+    a:focus {
+      color: $color-primary-red;
+    }
+  }
+}
+
+/* Header & Navigation */
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  &__logo img {
+    width: 3.5rem;
+  }
+
+  &__menu-btn {
+    background: transparent;
+    border: none;
+    cursor: pointer;
+    padding: 0;
+    z-index: 200;
+
+    @media (min-width: 48rem) {
+      display: none;
+    }
+  }
+
+  &__nav {
+    display: none;
+
+    @media (min-width: 48rem) {
+      display: block;
+    }
+
+    &--active {
+      display: block;
+      position: fixed;
+      top: 0;
+      right: 0;
+      bottom: 0;
+      width: 70%;
+      background-color: $color-neutral-off-white;
+      padding: 8rem 2rem 2rem;
+      z-index: 100;
+      box-shadow: 0 0 0 100vw rgba(0, 0, 0, 0.5);
+    }
+  }
+
+  &__list {
+    display: flex;
+    gap: 2.5rem;
+
+    @media (max-width: 47.99rem) {
+      flex-direction: column;
+      gap: 1.5rem;
+    }
+  }
+
+  &__link {
+    color: $color-neutral-dark-grayish-blue;
+
+    &:hover,
+    &:focus {
+      color: $color-primary-red;
+    }
+
+    .header__nav--active & {
+      color: $color-neutral-very-dark-blue;
+      font-weight: 700;
+      font-size: 1.25rem;
+    }
+  }
+}

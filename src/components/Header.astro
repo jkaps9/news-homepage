@@ -1,0 +1,43 @@
+---
+---
+<header class="header">
+  <a href="/" class="header__logo">
+    <img src="/assets/images/logo.svg" alt="W. Logo">
+  </a>
+  
+  <button class="header__menu-btn" aria-expanded="false" aria-controls="main-nav">
+    <span class="icon-open">☰</span>
+    <span class="icon-close" style="display: none;">✕</span>
+  </button>
+
+  <nav id="main-nav" class="header__nav">
+    <ul class="header__list">
+      <li class="header__item"><a href="#" class="header__link">Home</a></li>
+      <li class="header__item"><a href="#" class="header__link">New</a></li>
+      <li class="header__item"><a href="#" class="header__link">Popular</a></li>
+      <li class="header__item"><a href="#" class="header__link">Trending</a></li>
+      <li class="header__item"><a href="#" class="header__link">Categories</a></li>
+    </ul>
+  </nav>
+</header>
+
+<script>
+  const menuBtn = document.querySelector('.header__menu-btn');
+  const nav = document.querySelector('.header__nav');
+  const iconOpen = document.querySelector('.icon-open');
+  const iconClose = document.querySelector('.icon-close');
+
+  menuBtn?.addEventListener('click', () => {
+    const isExpanded = menuBtn.getAttribute('aria-expanded') === 'true';
+    menuBtn.setAttribute('aria-expanded', !isExpanded ? 'true' : 'false');
+    nav?.classList.toggle('header__nav--active');
+    
+    if (!isExpanded) {
+        iconOpen.style.display = 'none';
+        iconClose.style.display = 'block';
+    } else {
+        iconOpen.style.display = 'block';
+        iconClose.style.display = 'none';
+    }
+  });
+</script>

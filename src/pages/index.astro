@@ -1,0 +1,72 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Header from '../components/Header.astro';
+---
+
+<Layout title="Frontend Mentor | News homepage">
+  <div class="container">
+    <Header />
+    <main class="main-grid">
+      
+      <section class="hero">
+        <picture class="hero__picture">
+          <source media="(min-width: 64rem)" srcset="/assets/images/image-web-3-desktop.jpg">
+          <img class="hero__image" src="/assets/images/image-web-3-mobile.jpg" alt="Web 3.0 blocks graphic">
+        </picture>
+        <div class="hero__body">
+          <h1 class="hero__title">The Bright Future of Web 3.0?</h1>
+          <div class="hero__content">
+            <p class="hero__text">We dive into the next evolution of the web that claims to put the power of the platforms back into the hands of the people. But is it really fulfilling its promise?</p>
+            <a href="#" class="hero__button">Read more</a>
+          </div>
+        </div>
+      </section>
+
+      <aside class="new-articles">
+        <h2 class="new-articles__heading">New</h2>
+        <div class="new-articles__list">
+          <article class="new-articles__item">
+            <h3 class="new-articles__title"><a href="#">Hydrogen VS Electric Cars</a></h3>
+            <p class="new-articles__text">Will hydrogen-fueled cars ever catch up to EVs?</p>
+          </article>
+          <article class="new-articles__item">
+            <h3 class="new-articles__title"><a href="#">The Downsides of AI Artistry</a></h3>
+            <p class="new-articles__text">What are the possible adverse effects of on-demand AI image generation?</p>
+          </article>
+          <article class="new-articles__item">
+            <h3 class="new-articles__title"><a href="#">Is VC Funding Drying Up?</a></h3>
+            <p class="new-articles__text">Private funding by VC firms is down 50% YOY. We take a look at what that means.</p>
+          </article>
+        </div>
+      </aside>
+
+      <section class="top-articles">
+        <article class="top-article">
+          <img class="top-article__image" src="/assets/images/image-retro-pcs.jpg" alt="Retro PCs">
+          <div class="top-article__body">
+            <span class="top-article__number">01</span>
+            <h3 class="top-article__title"><a href="#">Reviving Retro PCs</a></h3>
+            <p class="top-article__text">What happens when old PCs are given modern upgrades?</p>
+          </div>
+        </article>
+        <article class="top-article">
+          <img class="top-article__image" src="/assets/images/image-top-laptops.jpg" alt="Top Laptops">
+          <div class="top-article__body">
+            <span class="top-article__number">02</span>
+            <h3 class="top-article__title"><a href="#">Top 10 Laptops of 2022</a></h3>
+            <p class="top-article__text">Our best picks for various needs and budgets.</p>
+          </div>
+        </article>
+        <article class="top-article">
+          <img class="top-article__image" src="/assets/images/image-gaming-growth.jpg" alt="Gaming Growth">
+          <div class="top-article__body">
+            <span class="top-article__number">03</span>
+            <h3 class="top-article__title"><a href="#">The Growth of Gaming</a></h3>
+            <p class="top-article__text">How the pandemic has sparked fresh opportunities.</p>
+          </div>
+        </article>
+      </section>
+      
+    </main>
+  </div>
+</Layout>
