@@ -36,14 +36,18 @@ body {
   line-height: 1.5;
 }
 
+p {
+  line-height: 1.7;
+}
+
 .container {
   width: 100%;
   max-width: 70rem;
   margin-inline: auto;
-  padding: 1.5rem 1rem;
+  padding: 1.5rem clamp(1rem, -2.8168rem + 16.285vw, 5rem);
 
   @media (min-width: 64rem) {
-    padding-top: 3.5rem;
+    padding: 3.5rem 0 0;
   }
 }
 
@@ -79,7 +83,7 @@ body {
     display: grid;
     gap: 1rem;
 
-    @media (min-width: 48rem) {
+    @media (min-width: 64rem) {
       grid-template-columns: 1fr 1fr;
       gap: 2rem;
     }
@@ -105,7 +109,7 @@ body {
 
   &__button {
     background-color: $color-primary-red;
-    color: $color-neutral-off-white;
+    color: $color-neutral-very-dark-blue;
     text-transform: uppercase;
     font-weight: 700;
     letter-spacing: 0.2rem;
@@ -114,6 +118,7 @@ body {
     &:hover,
     &:focus {
       background-color: $color-neutral-very-dark-blue;
+      color: $color-neutral-off-white;
     }
   }
 }
@@ -124,7 +129,7 @@ body {
   padding: 1.5rem;
 
   @media (min-width: 64rem) {
-    padding: 2rem;
+    padding: 1rem 1.5rem;
   }
 
   &__heading {
@@ -191,7 +196,7 @@ body {
   }
 
   &__number {
-    color: $color-neutral-grayish-blue;
+    color: $color-primary-red;
     font-size: 2rem;
     font-weight: 700;
     line-height: 1;
@@ -226,7 +231,7 @@ body {
     padding: 0;
     z-index: 200;
 
-    @media (min-width: 48rem) {
+    @media (min-width: 64rem) {
       display: none;
     }
   }
@@ -236,18 +241,21 @@ body {
     transform: translateX(100vw);
     transition: transform 0.3s ease;
 
-    @media (min-width: 48rem) {
+    @media (min-width: 64rem) {
       position: relative;
       transform: translateX(0);
     }
-    @media (max-width: 47.975rem) {
+    @media (max-width: 47.99rem) {
+      padding: 8rem 2rem 2rem;
+    }
+    @media (max-width: 63.99rem) {
       position: fixed;
       top: 0;
       right: 0;
       bottom: 0;
       width: 70%;
       background-color: $color-neutral-off-white;
-      padding: 8rem 2rem 2rem;
+      padding: 8rem 4rem 2rem;
       z-index: 100;
     }
 
@@ -261,7 +269,7 @@ body {
     display: flex;
     gap: 2.5rem;
 
-    @media (max-width: 47.99rem) {
+    @media (max-width: 63.99rem) {
       flex-direction: column;
       gap: 1.5rem;
     }
